@@ -1,0 +1,1 @@
+export { Home as default, meta } from '@/scenes/Home/components/pages/Home/Home';

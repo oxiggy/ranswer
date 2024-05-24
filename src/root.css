@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, :root {
+    height: 100%;
+}
+
+:root {
+    --colors-primary: black;
+    --colors-surface: white;
+}
+
+[data-theme="dark"] {
+    --colors-primary: white;
+    --colors-surface: #1f1f1f;
+}

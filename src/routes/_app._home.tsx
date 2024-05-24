@@ -1,0 +1,1 @@
+export { Home as default } from '@/scenes/Home/components/layouts/Home/Home';
