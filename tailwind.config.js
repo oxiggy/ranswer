@@ -6,7 +6,7 @@ export default {
   darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     fontFamily: {
-      serif: ['"Merriweather"', 'serif'],
+      serif: ['"Raleway"', 'sans-serif'],
     },
     extend: {
       colors: {
