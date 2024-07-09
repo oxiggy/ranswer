@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 export const useTheme = () => {
   return useQuery({
@@ -21,7 +21,7 @@ export const useMutationThemeSet = () => {
       return null
     },
     onSettled: async () => {
-      await queryClient.invalidateQueries(['theme'])
+      await queryClient.invalidateQueries({ queryKey: ['theme'] })
     }
   })
 }

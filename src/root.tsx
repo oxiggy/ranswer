@@ -1,7 +1,8 @@
 import React from "react";
-import './root.css'
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import './root.css'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const queryClient = React.useMemo(() => new QueryClient(), []);
@@ -19,6 +20,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </head>
         <body>
           {children}
+          <ReactQueryDevtools initialIsOpen={false} />
           <ScrollRestoration />
           <Scripts />
         </body>

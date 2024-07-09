@@ -15,10 +15,11 @@
     "@radix-ui/react-scroll-area": "^1.1.0",
     "@remix-run/node": "^2.8.1",
     "@remix-run/react": "^2.8.1",
+    "@tanstack/react-query": "^5.50.1",
+    "@tanstack/react-query-devtools": "^5.50.1",
     "clsx": "^2.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-query": "^3.39.3"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@remix-run/css-bundle": "^2.8.1",
