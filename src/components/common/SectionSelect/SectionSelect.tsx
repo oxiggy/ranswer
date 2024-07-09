@@ -1,21 +1,21 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import * as Popover from '@radix-ui/react-popover';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import clsx from "clsx";
 import { data } from "src/data/data";
 import Option from "src/components/common/SectionSelect/Option/Option";
+// @ts-ignore
 import ArrowIcon from "src/assets/icons/arrow-down.svg?react";
+// @ts-ignore
 import CloseIcon from "src/assets/icons/close.svg?react";
+import { useMutationSectionsSet, useSections } from "@/hooks/useSections";
 
 const SectionSelect = () => {
-  const [selected, setSelected] =  useState<string[]>([]);
+  const  { data: selected = [], isLoading } = useSections();
+  const setSections = useMutationSectionsSet();
 
   const handleOptionClick = (item: string) => {
-    if (selected.includes(item)) {
-      setSelected(selected.filter((selectedItem) => selectedItem !== item));
-    } else {
-      selected.length < 3 && setSelected([...selected, item]);
-    }
+    setSections.mutate({ item });
   };
 
   const selectedIcons = useMemo(() => {
@@ -23,6 +23,8 @@ const SectionSelect = () => {
       .filter((item) => selected.includes(item.category))
       .map((item) => item.icon);
   }, [selected]);
+
+  if (isLoading) return null;
 
   return (
     <div>

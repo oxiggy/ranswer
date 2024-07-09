@@ -26,7 +26,7 @@ const ThemeSelect = () => {
           )}
         />
       </div>
-      <input className="hidden" type="checkbox" checked aria-label="theme" />
+      <input className="hidden" type="checkbox" aria-label="theme" />
     </div>
   );
 };
